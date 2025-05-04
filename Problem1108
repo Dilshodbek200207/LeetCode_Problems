@@ -1,0 +1,9 @@
+public class Solution 
+{
+    public string DefangIPaddr(string address) 
+    {
+        string sum = address.Replace(".", "[.]");
+  
+        return sum;
+    }
+}
