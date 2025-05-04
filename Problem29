@@ -1,0 +1,16 @@
+public class Solution 
+{
+    public int Divide(int dividend, int divisor) 
+    {
+        var rs= Convert.ToInt64(dividend) / Convert.ToInt64(divisor);
+        if(rs <= -2147483648 )
+        {
+            return -2147483648;
+        }
+        else if(rs >= 2147483647)
+        {
+            return 2147483647;
+        }
+        return dividend / divisor;
+    }
+}
