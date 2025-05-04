@@ -1,0 +1,27 @@
+public class Solution 
+{
+    public string[] FindWords(string[] words) 
+    {
+        string firstRaw = "qwertyuiop";
+        string secondRaw = "asdfghjkl";
+        string thirdRaw = "zxcvbnm";
+
+        return words.Where(word => IsValidWord(word.ToLower(), firstRaw, secondRaw, thirdRaw)).ToArray();
+    }
+
+    private bool IsValidWord(string word, string firstRaw, string secondRaw, string thirdRaw)
+    {
+        char firstChar = word[0];
+        string validRaw = GetRow(firstChar, firstRaw, secondRaw, thirdRaw);
+
+        return word.All(c => GetRow(c, firstRaw, secondRaw, thirdRaw) == validRaw);
+    }
+
+    private string GetRow(char firstChar, string firstRaw, string secondRaw, string thirdRaw)
+    {
+        if(firstRaw.Contains(firstChar)) return firstRaw;
+        if(secondRaw.Contains(firstChar)) return secondRaw;
+        if(thirdRaw.Contains(firstChar)) return thirdRaw;
+        return string.Empty;
+    }
+}
