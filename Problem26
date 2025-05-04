@@ -1,0 +1,14 @@
+public class Solution 
+{
+    public int RemoveDuplicates(int[] nums) 
+    {
+        int[] sum = nums.Distinct().ToArray();
+
+        for(int i = 0; i < sum.Length; i++)
+        {
+            nums[i] = sum[i];
+        }
+        
+        return sum.Length;
+    }
+}
