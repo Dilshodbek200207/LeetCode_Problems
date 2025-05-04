@@ -1,0 +1,15 @@
+public class Solution 
+{
+    public int[] Intersection(int[] nums1, int[] nums2)
+    {
+        List<int> result = [];
+
+        foreach(var item in nums1)
+        {
+            if(nums2.Contains(item) && !result.Contains(item))
+                result.Add(item);
+        }
+
+        return [.. result];
+    }
+}
