@@ -1,0 +1,23 @@
+public class Solution 
+{
+    public int[] PlusOne(int[] digits) 
+    {
+        BigInteger a = 0; 
+
+        for(int i = 0; i < digits.GetLength(0); i++)
+        {
+            a = a * 10 + digits[i];
+        }
+        a += 1;
+
+        List<int> b = [];
+        while(a > 0)
+        {
+            b.Add((int)(a % 10));
+            a /= 10;
+        }
+
+        b.Reverse();
+        return [.. b];
+    }
+}
