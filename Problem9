@@ -1,0 +1,7 @@
+public class Solution 
+{
+    public bool IsPalindrome(int x) 
+    {
+        return string.Concat(x.ToString().Reverse()) == x.ToString();
+    }
+}
