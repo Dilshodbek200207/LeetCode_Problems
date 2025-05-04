@@ -1,0 +1,20 @@
+public class Solution 
+{
+    public int ClimbStairs(int n) 
+    {
+
+        int val1 = 0;
+        int val2 = 1;
+        int p = 0;
+        int output = 0;
+
+        while(p < n)
+        {
+            output = val1 + val2;
+            val1 = val2;
+            val2 = output;
+            p++;
+        }
+        return output;
+    }
+}
