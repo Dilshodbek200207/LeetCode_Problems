@@ -1,0 +1,28 @@
+public class Solution 
+{
+    public int CalPoints(string[] operations) 
+    {
+        var total = new List<int>();
+        var list = operations.ToList();
+        total.Add(int.Parse(list[0]));
+        for(int i = 1; i < list.Count; i++){
+            if(list[i] == "C"){
+                total.RemoveAt(total.Count - 1);
+                continue;
+            }
+            else if(list[i] == "D"){
+                total.Add(total[total.Count - 1] * 2);
+                continue;
+            }
+            else if(list[i] == "+"){
+                total.Add(total[total.Count - 1] + total[total.Count - 2]);
+                continue;
+            }
+            else{
+                total.Add(int.Parse(list[i]));
+            }
+        }
+
+        return total.Sum();
+    }
+}
