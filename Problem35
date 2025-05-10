@@ -1,0 +1,17 @@
+public class Solution 
+{
+    public int SearchInsert(int[] nums, int target) 
+    {
+         if (target > nums[nums.Length-1])
+            return nums.Length;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == target || nums[i] > target)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
+}
